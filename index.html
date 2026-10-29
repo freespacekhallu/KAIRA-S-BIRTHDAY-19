@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090807">
+  <title>A Birthday Surprise ✨</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <nav class="navbar">
+    <a class="brand" href="#home">KAIRA <span>BIRTHDAY</span></a>
+    <button class="music-mini" id="musicMini">♫ MUSIC OFF(Click to on)</button>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="live-dot"></span> A SPECIAL DAY • MADE WITH LOVE</p>
+        <h2>Today is all<br>about <span>you.</span></h2>
+        <p class="hero-copy">
+          One little website. A thousand little wishes.
+          And a surprise made especially for you. BEST WISHES FROM KHALANDAR 🤘🏻
+        </p>
+        <button class="gold-button" id="openSurprise">
+          OPEN YOUR SURPRISE(Click) <span>↗</span>
+        </button>
+        <p class="tiny-note">MADE JUST FOR YOU ♡</p>
+      </div>
+
+      <div class="hero-art" aria-label="Decorative golden 3D birthday sculpture">
+        <div class="art-halo"></div>
+        <div class="art-ring ring-one"></div>
+        <div class="art-ring ring-two"></div>
+        <div class="floating-star star-one">✦</div>
+        <div class="floating-star star-two">✧</div>
+        <div class="gold-number">HAPPY 19 live long</div>
+
+        <div class="art-caption">YOUR DAY. YOUR MAGIC.</div>
+        
+      </div>
+
+      <div class="scroll-cue">SCROLL TO DISCOVER <span>↓</span></div>
+    </section>
+
+    <section class="message-section" id="surprise">
+      <p class="eyebrow">A LITTLE REMINDER</p>
+      <h2>Some people make<br>the world <span>brighter.</span></h2>
+      <p class="section-copy">
+        And today is the perfect excuse to celebrate one of them.
+        May this new chapter bring you beautiful memories,
+        unexpected happiness, and reasons to smile every day.
+      </p>
+      <div class="wish-card">
+        <span class="wish-star">✦</span>
+        <p id="wishText">Your next beautiful chapter starts here.</p>
+        <button class="text-button" id="newWish">REVEAL ANOTHER WISH ↗</button>
+      </div>
+    </section>
+
+    <section class="cake-section" id="cake">
+      <p class="eyebrow">MAKE A WISH</p>
+      <h2>A little cake.<br><span>A little magic.</span></h2>
+      <p class="section-copy">Tap the cake to blow out the candle.</p>
+
+      <button class="cake-button" id="cakeButton" aria-label="Blow out the birthday candle">
+        <div class="cake-scene">
+          <div class="flame" id="flame"></div>
+          <div class="candle"></div>
+          <div class="cake-top"></div>
+          <div class="cake-body">
+            <div class="icing"></div>
+            <div class="cake-decoration">✦　✧　✦</div>
+          </div>
+          <div class="cake-plate"></div>
+        </div>
+      </button>
+      <p class="cake-message" id="cakeMessage">YOUR WISH IS WAITING ♡</p>
+    </section>
+
+    <section class="music-section" id="music">
+      <p class="eyebrow">PRESS PLAY & FEEL THE MAGIC</p>
+      <h2>Your birthday<br><span>soundtrack.</span></h2>
+
+      <div class="player">
+        <div class="album-art">
+          <div class="album-orbit orbit-a"></div>
+          <div class="album-orbit orbit-b"></div>
+          <span class="album-note">♫</span>
+          <span class="album-spark">✦</span>
+        </div>
+
+        <p class="track-label">A SONG FOR YOU</p>
+        <h3>Birthday Memories</h3>
+        <p class="track-subtitle">A little music, a lot of love.</p>
+
+        <div class="equalizer" id="equalizer" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+
+        <div class="progress-track" id="progressTrack">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="time-row">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="player-controls">
+          <button class="round-control" id="restartMusic" aria-label="Restart song">↺</button>
+          <button class="main-play" id="playMusic" aria-label="Play birthday music">▶</button>
+          <button class="round-control" id="muteMusic" aria-label="Mute music">♫</button>
+        </div>
+
+        <div class="volume-control">
+          <span>−</span>
+          <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8" aria-label="Music volume">
+          <span>+</span>
+        </div>
+        <p id="musicStatus" class="music-status">Ready when you are ♡</p>
+      </div>
+
+      <audio id="birthdayMusic" preload="metadata">
+        <source src="music/birthday.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+    <section class="game-section" id="game">
+      <p class="eyebrow">A TINY BIRTHDAY GAME</p>
+      <h2>Catch the <span>stars.</span></h2>
+      <p class="section-copy">
+        Tap the golden stars before they disappear.
+        How many can you collect in 15 seconds?
+      </p>
+
+      <div class="game-panel">
+        <div class="game-stats">
+          <span>SCORE <b id="score">0</b></span>
+          <span>TIME <b id="timer">15</b>s</span>
+        </div>
+        <div id="gameArea" class="game-area">
+          <div class="game-intro" id="gameIntro">
+            <span>✦</span>
+            <p>Ready to collect some magic?</p>
+            <button class="gold-button" id="startGame">START GAME</button>
+          </div>
+        </div>
+        <p id="gameMessage" class="game-message">Your adventure awaits.</p>
+      </div>
+    </section>
+
+    <section class="final-section">
+      <div class="final-star">✧</div>
+      <p class="eyebrow">ONE LAST THING</p>
+      <h2>Keep shining.<br><span>Always.</span></h2>
+      <p class="section-copy">
+        May you always find joy in the little things,
+        courage in the difficult moments, and love in
+        the places you least expect.
+      </p>
+      <button class="gold-button" id="finalButton">SEND YOU A WISH ♡</button>
+      <p id="finalMessage" class="final-message"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>CRAFTED WITH ♡</span>
+    <span>FOR YOUR SPECIAL DAY</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
